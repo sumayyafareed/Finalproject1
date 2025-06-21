@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watches Collection - Royal Elegance</title>
+  <link rel="stylesheet" href="css/style.css" />
+  </head>
+<body>
+
+<header>
+  <div class="logo">💎 Royal Elegance</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="#">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="categories">
+  <h2>Watches Collection</h2>
+  <div class="category-container" id="product-list">
+    <!-- Products will load here -->
+  </div>
+<script src="js/api.js"></script>
+<script src="js/products.js"></script>
+
+<!-- Order Modal -->
+  <div id="orderModal" style="display:none;position:fixed;z-index:999;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;">
+  <div style="background:#fff;padding:30px 25px;border-radius:12px;width:90%;max-width:400px;box-shadow:0 0 15px rgba(0,0,0,0.2);position:relative;font-family:sans-serif;">
+    <span onclick="closeForm()" style="position:absolute;top:12px;right:15px;font-size:24px;cursor:pointer;font-weight:bold;color:#555;">×</span>
+    <h2 style="text-align:center;margin-bottom:20px;color:#222;">Place Your Order</h2>
+    <form id="orderForm">
+      <label for="orderProduct" style="font-weight:600;">Product</label>
+      <input type="text" id="orderProduct" readonly required style="width:100%;padding:10px;margin-bottom:15px;border-radius:6px;border:1px solid #ccc;">
+
+      <label for="orderName" style="font-weight:600;">Your Name</label>
+      <input type="text" id="orderName" placeholder="Full Name" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:6px;border:1px solid #ccc;">
+
+      <label for="orderPhone" style="font-weight:600;">Phone Number</label>
+      <input type="text" id="orderPhone" placeholder="03xxxxxxxxx" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:6px;border:1px solid #ccc;">
+
+      <label for="orderAddress" style="font-weight:600;">Delivery Address</label>
+      <textarea id="orderAddress" placeholder="Street, City, Area Code" required style="width:100%;padding:10px;height:80px;border-radius:6px;border:1px solid #ccc;margin-bottom:20px;"></textarea>
+
+      <button type="submit" style="width:100%;background-color:#000;color:#fff;padding:12px;border:none;border-radius:6px;font-weight:bold;font-size:16px;cursor:pointer;">Submit Order</button>
+    </form>
+  </div>
+</div>
+
+
+ <footer>
+    <p>© 2025 Royal Elegance. All Rights Reserved.</p>
+    <p>Contact: +123 456 789 | Email: info@royalelegance.com</p>
+  </footer>
+</body>
+</html>

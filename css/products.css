@@ -1,0 +1,227 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Video Styling */
+.hero-video {
+  width: 100%;
+  height: 50vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.video-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.left-video,
+.right-video {
+  width: 50%;     
+  height: 100%;   
+  object-fit: cover; 
+  display: block;
+}
+
+
+body::before {
+  content: none !important;
+}
+
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* Categories Section */
+.categories {
+  padding: 60px 20px;
+  text-align: center;
+  background: url(../images/background8.jpg) no-repeat center center/cover;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+  z-index: 0;
+}
+.categories h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffd700;
+}
+
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.card {
+  background: rgba(0, 0, 0, 0.6); 
+  border: 1px solid rgba(100, 85, 85, 0.2);
+  border-radius: 12px;
+  padding: 25px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+
+.card:hover {
+  background: rgba(83, 82, 82, 0.75);
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #ddd;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 30px 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}
+
+/* Product Card Styling (if products are loaded dynamically) */
+.product-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  color: #fff;
+  margin: 10px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.product-card button {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.product-card button:hover {
+  background: #e6c200;
+}
+/* 📱 Mobile (up to 600px) */
+@media screen and (max-width: 600px) {
+  .video-container {
+    flex-direction: column;
+  }
+
+  .left-video,
+  .right-video {
+    width: 100%;
+    height: 50%;
+  }
+
+  .container {
+    width: 95%;
+  }
+}
+
+/* 📱 Tablets (601px to 900px) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .video-container {
+    flex-direction: row;
+  }
+
+  .left-video,
+  .right-video {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+/* 💻 Laptops (901px to 1200px) */
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .left-video,
+  .right-video {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+/* 🖥️ Projectors & Large Screens (1201px and above) */
+@media screen and (min-width: 1201px) {
+  .left-video,
+  .right-video {
+    width: 50%;
+    height: 100%;
+  }
+}

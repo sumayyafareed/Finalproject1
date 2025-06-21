@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - Royal Elegance</title>
+  <link rel="stylesheet" href="css/products.css" />
+  
+
+  </head>
+<body>
+
+<header>
+  <div class="logo">💎 Royal Elegance</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!--  Video Background Section -->
+
+<section class="hero-video">
+  <div class="video-container">
+    <video autoplay muted loop playsinline class="left-video">
+      <source src="backgroundvideo/video2.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop playsinline class="right-video">
+      <source src="backgroundvideo/video3.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+
+<!--  Top Section with Background Image -->
+<section class="categories">
+  <h2>Our Collections</h2>
+  <div class="category-container">
+
+    <div class="card">
+      <a href="rings.html">
+        <h3> 💍 <b>Rings</b></h3></a>
+        click now  the Rings <p>"Crafted to perfection our rings reflect unmatched quality and timeless elegance made to last, made to love."</p>
+    </div>
+
+    <div class="card">
+      <a href="necklaces.html">
+        <h3>📿 <b>Necklaces</b></h3></a>
+        click now  the Necklaces<p>"Where quality meets beauty our necklaces are crafted from the finest materials to offer grace that never fades." </p>
+    </div>
+
+    <div class="card">
+      <a href="earrings.html">
+        <h3>✨ <b>Earrings</b></h3></a>
+        click now  the Earrings<p>"Finely detailed flawlessly finished our earrings bring lasting shine and uncompromising quality to every look."</p>
+    </div>
+
+    <div class="card">
+      <a href="bracelets.html">
+        <h3>💫 <b>Bracelets</b></h3></a>
+        click now the Bracelets<p>"Made with precision and passion our bracelets are designed to stay elegant, strong, and eternally stylish."</p>
+    </div>
+
+    <div class="card">
+      <a href="pendants.html">
+        <h3>🔗 <b>Pendants</b></h3></a>
+         click now the Pendants<p>"Tiny treasures crafted with excellence,our pendants combine purity of materials with precision artistry."</p>
+    </div>
+
+    <div class="card">
+      <a href="anklets.html">
+        <h3>🎀 <b>Anklets</b></h3></a>
+        click now the Anklets<p>"Delicately durable our anklets are a symbol of fine craftsmanship that compliments every graceful step."</p>
+    </div>
+
+    <div class="card">
+      <a href="watches.html">
+        <h3>⌚ <b>Watches</b></h3></a>
+        click now the Watches<p>"Engineered for elegance our watches blend precision, luxury, and enduring quality in every tick."
+
+</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Royal Elegance. All Rights Reserved.</p>
+  <p>Contact: +123 456 789 | Email: info@royalelegance.com</p>
+</footer>
+
+</body>
+<script>
+  const categorySection = document.querySelector('.categories');
+
+  const bgImages = [
+    "images/background8.jpg",
+    "images/background5.jpg",
+    "images/background6.jpg"
+  ];
+
+  let current = 0;
+
+  setInterval(() => {
+    categorySection.style.backgroundImage = `url('${bgImages[current]}')`;
+    current = (current + 1) % bgImages.length;
+  }, 3000);
+</script>
+
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const productList = document.getElementById("product-list");
+  fetchProducts().then(products => {
+    products.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>Price: ${product.price}</p>
+        <button onclick="alert('Order placed for ${product.name}!')">Buy Now</button>
+      `;
+
+      productList.appendChild(card);
+    });
+  });
+});
+
+const products = [
+  {
+    id: 1,
+    name: "Royal Diamond Ring",
+    price: "$999",
+    image: "images/rings/ring.jpg",
+    category: "Rings"
+  },
+  {
+    id: 2,
+    name: "Elegant Gold Necklace",
+    price: "$1499",
+    image: "images/necklaces/necklace.jpg",
+    category: "Necklaces"
+  },
+  {
+    id: 3,
+    name: "Shiny Pearl Earrings",
+    price: "$499",
+    image: "images/earrings/earrings.jpg",
+    category: "Earrings"
+  },
+  {
+    id: 4,
+    name: "Luxury Bracelet",
+    price: "$799",
+    image: "images/bracelet.jpg",
+    category: "Bracelets"
+  },
+  {
+    id: 5,
+    name: "Diamond Pendant",
+    price: "$1299",
+    image: "images/pendant.jpg",
+    category: "Pendants"
+  },
+  {
+    id: 6,
+    name: "Gold Anklet",
+    price: "$299",
+    image: "images/anklet.jpg",
+    category: "Anklets"
+  },
+  {
+    id: 7,
+    name: "Luxury Watch",
+    price: "$1999",
+    image: "images/watch.jpg",
+    category: "Watches"
+  }
+];
+
+// API function to get products by category
+function getProductsByCategory(category) {
+  return products.filter(product => product.category === category);
+}
+
+</script>
+</html>
